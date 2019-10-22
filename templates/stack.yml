@@ -46,7 +46,7 @@ Resources:
   AutoScalingLaunchConfiguration:
     Type: "AWS::AutoScaling::LaunchConfiguration"
     Properties:
-      ImageId: ami-cf6342ac
+      ImageId: ami-00017101cbd0aceef
       InstanceType: t2.micro
       KeyName: { "Ref": "KeyPair" }
       IamInstanceProfile: { "Ref": "EC2InstanceProfile" }
@@ -172,7 +172,7 @@ Resources:
     Properties:
       ContainerDefinitions:
         - Name: todobackend
-          Image: jmenga/todobackend
+          Image: warrior7089/todobackend
           Memory: 450
           Environment:
             - Name: DJANGO_SETTINGS_MODULE
@@ -194,8 +194,8 @@ Resources:
             - "--master"
             - "--die-on-term"
         - Name: nginx
-          Image: jmenga/todobackend-nginx
-          Memory: 300
+          Image: warrior7089/todobackend-nginx
+          Memory: 288
           PortMappings:
             - ContainerPort: "8000"
               HostPort: "8000"
@@ -211,7 +211,7 @@ Resources:
     Properties:
       ContainerDefinitions:
         - Name: todobackend
-          Image: jmenga/todobackend
+          Image: warrior7089/todobackend
           Memory: 245
           Environment:
             - Name: DJANGO_SETTINGS_MODULE
